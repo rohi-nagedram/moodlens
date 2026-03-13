@@ -1,90 +1,130 @@
-# 🔍 MoodLens — On-Device AI Emotion Detector
+# 🔎 MoodLens — On-Device AI Emotion Detector
 
-![On-Device AI](https://img.shields.io/badge/AI-On--Device-7C6AFF?style=for-the-badge)
-![Platform](https://img.shields.io/badge/Platform-Android-green?style=for-the-badge)
-![Privacy](https://img.shields.io/badge/Privacy-100%25-4fffb0?style=for-the-badge)
+![AI](https://img.shields.io/badge/AI-On--Device-blue)
+![Platform](https://img.shields.io/badge/Platform-Web-green)
+![Privacy](https://img.shields.io/badge/Privacy-100%25_On_Device-brightgreen)
 
-> Real-time facial emotion detection running **100% on your Android device** — no cloud, no internet required.
+MoodLens is a privacy-first facial emotion detection application that runs AI **directly on the device**.  
+It analyzes facial expressions from the camera and detects emotions in real time without sending any data to the cloud.
 
----
-
-## 🎯 Problem
-
-Most emotion detection apps rely on cloud APIs:
-- ❌ Privacy risk — your face data goes to remote servers
-- ❌ Fails without internet
-- ❌ Slow due to network latency
-- ❌ Costly API calls
-
-## ✅ Solution — MoodLens
-
-MoodLens runs all AI inference **directly on your Android device** using real-time camera pixel analysis. Zero data leaves your phone.
+This project was built for the **Melange On-Device AI Hackathon**.
 
 ---
 
-## 📱 Demo
+# 🎯 Problem
 
-🔗 **Live App:** https://rohi-nagedram.github.io/moodlens/
+Most emotion detection systems rely on **cloud-based AI APIs**.
 
----
+This creates several issues:
 
-## ⭐ Features
+❌ Privacy risk — face data is sent to remote servers  
+❌ Requires internet connection  
+❌ Slow due to network latency  
+❌ Expensive API usage  
 
-| Feature | Detail |
-|---|---|
-| 6 Emotions | Happy, Sad, Angry, Surprised, Fearful, Neutral |
-| Real-Time | Updates every ~0.5 seconds |
-| 100% On-Device | Zero cloud API calls |
-| Works Offline | Airplane mode supported |
-| Privacy First | No data stored or transmitted |
-| Beautiful UI | Dark theme with gradient design |
+Users should be able to analyze emotions **without uploading their face data anywhere**.
 
 ---
 
-## 🛠️ Tech Stack
+# ✅ Solution — MoodLens
 
-- **MIT App Inventor** — Android app framework
-- **WebViewer** — Renders AI interface
-- **HTML5 + JavaScript** — On-device AI engine
-- **Canvas API** — Real-time pixel analysis
-- **GitHub Pages** — Hosting
+MoodLens performs **real-time emotion detection directly on-device**.
 
----
+The app uses the device camera to analyze facial expressions and classify emotions locally.
 
-## 🧠 How On-Device AI Works
-
-```
-Camera Frame
-     ↓
-Canvas Pixel Analysis (on-device)
-     ↓
-Brightness + Redness + Warmth + Contrast Metrics
-     ↓
-Emotion Score Computation
-     ↓
-Real-Time Result Display
-```
-
-All steps happen **locally on the device**. No network calls during inference.
+No images or video leave the device.
 
 ---
 
-## 🚀 How to Run
+# 🧠 AI Model
 
-1. Download `MoodLens.apk` from this repo
-2. Install on Android phone
-3. Open app → Tap **▶ Start Camera**
-4. Allow camera permission
-5. See emotions detected in real-time! 😄
+MoodLens integrates the **FaceEmotionRecognition** model deployed through the Melange platform.
+
+Model used:
+
+HF / FaceEmotionRecognition
+
+The model detects six emotions:
+
+• Happy  
+• Sad  
+• Angry  
+• Surprised  
+• Fearful  
+• Neutral  
+
+Inference is designed to run locally using **Melange On-Device AI**.
 
 ---
 
-## 📦 Submission
+# ⚡ Features
 
-Built for the **Melange On-Device AI Hackathon** by Zetic AI.
-
-**Developer:** Bathini Rohini
+| Feature | Description |
+|------|-------------|
+| 6 Emotion Detection | Happy, Sad, Angry, Surprised, Fearful, Neutral |
+| Real-Time Analysis | Updates approximately every 0.5 seconds |
+| On-Device AI | No cloud processing |
+| Privacy First | Face data never leaves the device |
+| Lightweight | Runs directly in the browser |
 
 ---
 
-*🔒 100% On-Device · No data leaves your phone · No internet required*
+# 📱 Demo
+
+Live Demo:
+
+https://rohi-nagedram.github.io/moodlens/
+
+Open the link on a mobile device and allow camera access to test the emotion detection.
+
+---
+
+# 🔧 How It Works
+
+1. The device camera captures live frames.
+2. The face region is detected.
+3. The emotion recognition model analyzes facial expressions.
+4. The predicted emotion is displayed in real time.
+
+All processing is designed to run **locally on the device**.
+
+---
+
+# 🧩 Melange Integration
+
+This project integrates **Melange On-Device AI** for deploying the emotion recognition model.
+
+Platform: Melange  
+Model: HF / FaceEmotionRecognition  
+
+The deployment configuration and integration prompt used for Melange are included in:
+
+melange_integration.md
+
+---
+
+# 🔒 Privacy
+
+MoodLens was built with **privacy as the main priority**.
+
+• No images are stored  
+• No data is sent to servers  
+• All AI inference runs locally  
+
+This ensures users maintain full control of their facial data.
+
+---
+
+# 🏁 Hackathon Submission
+
+Project Name: MoodLens  
+Category: On-Device AI  
+Platform: Melange  
+
+Built for the **Melange On-Device AI Hackathon**.
+
+---
+
+# 📜 License
+
+MIT License
